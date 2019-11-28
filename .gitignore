@@ -1,4 +1,1 @@
-config.yml
 __pycache__
-/engines/*
-!/engines/README.md
