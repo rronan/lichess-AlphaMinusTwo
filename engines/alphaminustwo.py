@@ -1,6 +1,3 @@
-import random
-
-
 class AlphaMinusTwo:
     def __init__(self, config):
         self.config = config
@@ -21,7 +18,10 @@ class AlphaMinusTwo:
         nodes=None,
         movetime=None,
     ):
-        return random.choice(list(self.board.legal_moves)), None
+        for candidate in self.board.legal_moves:
+            move = candidate  # this is just an example
+            break
+        return move, None
 
     def stop(self):
         pass

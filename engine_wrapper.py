@@ -2,7 +2,7 @@ import backoff
 import chess
 import chess.uci
 
-from engines.alphaminustwo import AlphaMinusTwo
+import engines
 
 
 @backoff.on_exception(backoff.expo, BaseException, max_time=120)
@@ -12,7 +12,7 @@ def create_engine(config, board):
 
 class EngineWrapper:
     def __init__(self, config, board):
-        self.engine = AlphaMinusTwo(config)
+        self.engine = getattr(engines, config["engine"]["name"])(config)
         self.engine.position(board)
         info_handler = chess.uci.InfoHandler()
         self.engine.info_handlers.append(info_handler)

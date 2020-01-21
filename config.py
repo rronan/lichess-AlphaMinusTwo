@@ -59,15 +59,4 @@ def load_config(config_file):
         if not os.path.isdir(CONFIG["engine"]["dir"]):
             raise Exception("Your engine directory `{}` is not a directory.")
 
-        engine = os.path.join(CONFIG["engine"]["dir"], CONFIG["engine"]["name"])
-
-        if not os.path.isfile(engine):
-            raise Exception("The engine %s file does not exist." % engine)
-
-        if not os.access(engine, os.X_OK):
-            raise Exception(
-                "The engine %s doesn't have execute (x) permission. Try: chmod +x %s"
-                % (engine, engine)
-            )
-
     return CONFIG

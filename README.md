@@ -1,3 +1,14 @@
+# AlphaMinusTwo
+
+(For installation, see `lichess-bot` documentation below)
+
+To build your own model, implement <EXAMPLE> as a subclass of AlphaMinusTwo.
+
+Import <EXAMPLE> in `engines/__init__.py`:
+`from .<egfile>.py import <EXAMPLES>`
+
+Modify config.yml/engine/name with the name of the class <EXAMPLE>.
+
 # lichess-bot
 A bridge between [Lichess API](https://lichess.org/api#tag/Chess-Bot) and bots.
 
